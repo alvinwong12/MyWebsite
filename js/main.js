@@ -10,10 +10,7 @@ function removeMsg(element){
 */
 
 function removeMsg(element){
-
 		element.attr('data-content', '')
-
-	
 }
 
 // Jquery
@@ -109,24 +106,20 @@ $(document).ready(function(){
 
 	
 	$(window).scroll(function() {
-		var hT = $('#lemonlaw').offset().top,
-			hH = $('#lemonlaw').outerHeight(),
-			wH = $(window).height(),
-			wS = $(this).scrollTop();
 
-		console.log(hT)
-		console.log(hH)
-		console.log(wH)
-		console.log(wS)
+		// Only Show when element in view of middle of viewport
+		var height = $(window).height();
+		var top = $(window).scrollTop();
+		var bot = $(window).scrollTop() + height;
+		var ele = $('#lemonlaw').offset().top;
 
-		if (wS - (hT+hH-wH) > 50){
-				if (screen.width < 768){
-					$('.layer1').addClass('hover');
-				}
-		   
+		if (ele > top+height/4 && ele < bot-height/4){
+			if (screen.width < 768){
+				$('.layer1').addClass('hover')
+			}
 		}
 		else{
-				$('.layer1').removeClass('hover');
+			$('.layer1').removeClass('hover');
 		}
 
 		var hT = $('#hashtagTracker').offset().top,
