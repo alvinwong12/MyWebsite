@@ -108,12 +108,13 @@ $(document).ready(function(){
 	$(window).scroll(function() {
 
 		// Only Show when element in view of middle of viewport
+		// Project 1
 		var height = $(window).height();
 		var top = $(window).scrollTop();
 		var bot = $(window).scrollTop() + height;
 		var ele = $('#lemonlaw').offset().top;
 
-		if (ele > top+height/4 && ele < bot-height/4){
+		if (ele > top+height/6 && ele < bot-height/2){
 			if (screen.width < 768){
 				$('.layer1').addClass('hover')
 			}
@@ -122,37 +123,35 @@ $(document).ready(function(){
 			$('.layer1').removeClass('hover');
 		}
 
-		var hT = $('#hashtagTracker').offset().top,
-			hH = $('#hashtagTracker').outerHeight(),
-			wH = $(window).height(),
-			wS = $(this).scrollTop();
+		// Project 2
+		var height = $(window).height();
+		var top = $(window).scrollTop();
+		var bot = $(window).scrollTop() + height;
+		var ele = $('#hashtagTracker').offset().top;
 
-		if (wS > (hT+hH-wH)){
-				if (screen.width < 768){
-					$('.layer2').addClass('hover');
-				}
-		   
+		if (ele > top+height/6 && ele < bot-height/2){
+			if (screen.width < 768){
+				$('.layer2').addClass('hover')
+			}
 		}
 		else{
-				$('.layer2').removeClass('hover');
+			$('.layer2').removeClass('hover');
 		}
 
+		// Project 3
+		var height = $(window).height();
+		var top = $(window).scrollTop();
+		var bot = $(window).scrollTop() + height;
+		var ele = $('#2048').offset().top;
 
-		var hT = $('#2048').offset().top,
-			hH = $('#2048').outerHeight(),
-			wH = $(window).height(),
-			wS = $(this).scrollTop();
-
-		if (wS > (hT+hH-wH)){
-				if (screen.width < 768){
-					$('.layer3').addClass('hover');
-				}
-		   
+		if (ele > top+height/6 && ele < bot-height/2){
+			if (screen.width < 768){
+				$('.layer3').addClass('hover')
+			}
 		}
 		else{
-				$('.layer3').removeClass('hover');
+			$('.layer3').removeClass('hover');
 		}
-
 
 
 	});
