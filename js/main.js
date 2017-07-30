@@ -96,10 +96,15 @@ $(document).ready(function(){
 
 
 	//
-
-	if (screen.width < 768){
-		$('#user-description').html('Automation Developer<br>X<br>Programmer')
-	}
+	$(window).resize(function(){
+		if (screen.width < 768){
+			$('#user-description').html('Automation Developer<br>X<br>Programmer')
+		}
+		else{
+			$('#user-description').html('Automation Developer &bull; Programmer')
+		}
+	})
+	
 
 
 	///
