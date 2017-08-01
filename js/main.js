@@ -8,6 +8,33 @@ function removeMsg(element){
 	
 }
 */
+var projectPeriodicTimer
+
+function cycleProject(){
+	var element = ".layer3"
+	projectPeriodicTimer = setInterval(function(){
+			
+		if (screen.width >= 768 && screen.width <= 991){
+			$(element).removeClass('hover')
+			if (element === ".layer1"){
+				
+				element = ".layer2"
+				
+			}
+			else if (element === ".layer2"){
+				
+				element = ".layer3"
+				
+			}
+			else{
+				
+				element = ".layer1"
+				
+			}
+			$(element).addClass('hover')
+		}
+	}, 1500);
+}
 
 function removeMsg(element){
 		element.attr('data-content', '')
@@ -160,7 +187,33 @@ $(document).ready(function(){
 
 
 	});
+
+
+	//
 	
+	if (screen.width >= 768 && screen.width <= 991){
+		$('.layer1').removeClass('hover')
+		$('.layer2').removeClass('hover')
+		$('.layer3').removeClass('hover')
+		cycleProject()
+	}
+	else{
+		$('.layer1').removeClass('hover')
+		$('.layer2').removeClass('hover')
+		$('.layer3').removeClass('hover')
+		clearInterval(projectPeriodicTimer)
+		
+	}
+	$(window).resize(function(){
+		$('.layer1').removeClass('hover')
+		$('.layer2').removeClass('hover')
+		$('.layer3').removeClass('hover')
+		clearInterval(projectPeriodicTimer)
+		if (screen.width >= 768 && screen.width <= 991){
+			cycleProject()
+		}
+
+	})
 
 });
 

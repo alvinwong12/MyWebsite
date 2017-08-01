@@ -76,25 +76,25 @@ span{
 /*	Elements  */
 
 /*	Jumbotron  */
-@media only screen and (min-width: 992px){
+@media only screen and (min-width: 992px) and (max-width: 1199px){
 	.jumbotron{
-		height:60%;
+		height:550px;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
 	.jumbotron{
-		height: 70%;
+		height: 490px;
 	}
 }
 @media only screen and (min-width: 1200px){
 	.jumbotron{
-		height:75%;
+		height:650px;
 	}
 }
 
 @media only screen and (max-width: 767px){
 	.jumbotron{
-		height: 80%;
+		height: 500px;
 	}
 }
 .jumbotron{
@@ -272,6 +272,11 @@ span{
 		font-size: 50px;
 	}
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.jumbotron .h1{
+		font-size: 57px;
+	}
+}
 .jumbotron .h1 > span{
 	color:#6BEBFF;
 }
@@ -288,6 +293,11 @@ span{
 @media only screen and (min-width: 768px) and (max-width: 991px){
 	#jumbotron-content #bar-1{
 		width:312px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	#jumbotron-content #bar-1{
+		width:360px;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -313,6 +323,12 @@ span{
 		margin-top:0.6%;
 	}
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	#jumbotron-content #user-description{
+		font-size:25px;
+		margin-top:0.7%;
+	}
+}
 @media only screen and (max-width: 767px){
 	#jumbotron-content #user-description{
 		font-size:35px;
@@ -334,7 +350,7 @@ span{
 	transition: 0.5s;
 	margin-right: 0.7%;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	#jumbotron-btns .btn1, #jumbotron-btns .btn1:visited, #jumbotron-btns .btn1:active, #jumbotron-btns .btn1:focus{
 		padding:6px 25px;
 		font-size:14px;
@@ -346,6 +362,7 @@ span{
 		font-size:13px;
 	}
 }
+
 @media only screen and (max-width: 767px){
 	#jumbotron-btns .btn1, #jumbotron-btns .btn1:visited, #jumbotron-btns .btn1:active, #jumbotron-btns .btn1:focus{
 		padding:4px 20px;
@@ -369,7 +386,7 @@ span{
 	text-decoration: none;
 	transition: 0.5s;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	#jumbotron-btns .btn2, #jumbotron-btns .btn2:visited, #jumbotron-btns .btn2:active, #jumbotron-btns .btn2:focus{
 		padding:6px 25px;
 		font-size:14px;
@@ -419,7 +436,7 @@ span{
 	margin-top:0.8%;
 	margin-bottom: 1.5%;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	.quote #bar-2{
 		width: 45px;
 	}
@@ -429,6 +446,7 @@ span{
 		width: 50px;
 	}
 }
+
 @media only screen and (max-width: 767px){
 	.quote #bar-2{
 		width: 40px;
@@ -451,6 +469,11 @@ span{
 		font-size:20px;
 	}
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.quote #content-quote{
+		font-size:22px;
+	}
+}
 @media only screen and (max-width: 767px){
 	.quote #content-quote{
 		font-size:17px;
@@ -462,7 +485,7 @@ span{
 		font-size: 14px;
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 991px){
+@media only screen and (min-width: 768px) and (max-width: 1199px){
 	.quote .footer{
 		font-size: 13px;
 	}
@@ -513,6 +536,20 @@ span{
 
 		height:200px;
 		width:220px;
+
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.projects img{
+		
+		height: 250px;
+		width:300px;
+		
+	}
+	.projects .img-wrapper{
+
+		height:250px;
+		width:300px;
 
 	}
 }
@@ -586,8 +623,22 @@ span{
   transition: .2s;
   transform: translateY(1em);
   padding:5%;
-  font-size:20px;
   font-weight:900;
+}
+@media only screen and (max-width: 767px){
+	.projects .img-description{
+		font-size: 25px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.projects .img-description{
+		font-size: 18px;
+	}
+}
+@media only screen and (min-width: 1200px){
+	.projects .img-description{
+		font-size: 20px;
+	}
 }
 
 .projects.img-wrapper:hover .img-description {
@@ -611,9 +662,14 @@ span{
 	margin: auto;
 	width: 40px;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	.projects #bar-3{
 		margin-bottom: 5%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.projects #bar-3{
+		margin-bottom: 7%;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -641,9 +697,14 @@ span{
 	margin: auto;
 	width: 60px;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	.about #bar-4{
 		margin-bottom: 5%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.about #bar-4{
+		margin-bottom: 7%;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -680,9 +741,19 @@ span{
 		font-weight:900; 
 		color: #756bff;
 	}
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.about .text-content .job-company{
+		font-size:28px; 
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
 	.about .text-content .job-company{
 		font-size:30px; 
+	}
+}
+@media only screen and (min-width: 1200px){
+	.about .text-content .job-company{
+		font-size:35px; 
 	}
 }
 @media only screen and (max-width: 767px){
@@ -702,9 +773,14 @@ span{
 	margin: auto;
 	width: 75px;
 }
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 992px){
 	.contact #bar-5{
 		margin-bottom: 5%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.contact #bar-5{
+		margin-bottom: 7%;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -720,6 +796,16 @@ span{
 		font-size: 40px;
 	}
 }
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.contact #email{
+		font-size: 30px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.contact #email{
+		font-size: 35px;
+	}
+}
 @media only screen and (max-width: 767px){
 	.contact #email{
 		font-size: 23px;
@@ -730,6 +816,12 @@ span{
 		font-size:25px;
 	}
 }
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+	.contact #intro{
+		font-size: 22px;
+	}
+}
+
 @media only screen and (max-width: 767px){
 	.contact #intro{
 		font-size:20px;
@@ -754,7 +846,12 @@ span{
 		padding-left:70px;
 	}
 }
-
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.contact #extraInfo{
+		padding-right:60px;
+		padding-left:60px;
+	}
+}
 .contact form::after{
 	font-family: gruppo;
 	content: attr(data-content);
