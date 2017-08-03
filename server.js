@@ -1,9 +1,4 @@
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expressValidator = require('express-validator');
-var cors = require('cors');
-var nodemailer = require('nodemailer');
-
 var express = require('express')
 var app = express()
 var port = process.env.PORT || 8080;
@@ -12,17 +7,8 @@ var fs = require('fs');
 var googleAuth = require('google-auth-library');
 var google = require('googleapis');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-app.use(cors({credentials: true, origin: true}))
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,POST');
-  	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-}
-
-app.use(allowCrossDomain);
 
 function getOAuth2Client(callback) {
 	// Load client secrets
@@ -53,7 +39,7 @@ function sendMail(auth, formData, callback) {
 	var gmail = google.gmail('v1');
 
 	var email_lines = [];
-	console.log(formData)
+
 	email_lines.push('From: alvinwong312@gmail.com');
 	email_lines.push('To: alvinwong312@gmail.com');
 	email_lines.push('Content-type: text/html;charset=iso-8859-1');
@@ -109,7 +95,7 @@ app.get('/profotlio', function(req, res){
 	res.redirect('/main.html#projects');
 })
 
-app.post('/message', urlencodedParser, function(req,res){
+app.post('/message', function(req,res){
 
 	var formData = {
 		"name": req.body.name,
@@ -117,8 +103,6 @@ app.post('/message', urlencodedParser, function(req,res){
 		"message": req.body.message
 	}
 
-	console.log(req.body.name)
-	console.log(formData);
 	getOAuth2Client(function(err, oauth2Client) {
 		if (err) {
 			console.log('err:', err);
@@ -130,7 +114,7 @@ app.post('/message', urlencodedParser, function(req,res){
 					res.sendStatus(500);
 				} else {
 					console.log(results);
-					res.status(200).send('msg sent')
+					res.sendStatus(200);
 				}
 			});
 		}

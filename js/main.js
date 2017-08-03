@@ -103,8 +103,7 @@ $(document).ready(function(){
 	    // Serializes form data
 	    formData  = $this.serialize();
 	    // create another function to post using xmlhttp
-	    console.log(formData);
-	
+
 		var http = new XMLHttpRequest();
 		http.onreadystatechange = function(){
 			if (this.readyState == 4){
@@ -122,7 +121,9 @@ $(document).ready(function(){
 			}
 					   
 		};
+
 		http.open('POST', url, true);
+		http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 		http.send(formData);
 	   
 	});
