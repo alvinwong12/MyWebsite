@@ -6,6 +6,7 @@ var nodemailer = require('nodemailer');
 
 var express = require('express')
 var app = express()
+var port = process.env.PORT || 8080;
 
 var fs = require('fs');
 var googleAuth = require('google-auth-library');
@@ -139,8 +140,6 @@ app.post('/message', urlencodedParser, function(req,res){
 })
 
 
-var server = app.listen(8080, function(){
-	var port = server.address().port
-
+var server = app.listen(port, function(){
 	console.log("listening at %s", port);
 })
