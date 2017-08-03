@@ -103,15 +103,21 @@ $(document).ready(function(){
 	    // Serializes form data
 	    formData  = $this.serialize();
 	    // create another function to post using xmlhttp
-
+	    console.log(formData);
+	
 		var http = new XMLHttpRequest();
 		http.onreadystatechange = function(){
 			if (this.readyState == 4){
 				if (this.status == 200){
 					// Get submit button
+
 	    			$this.attr('data-content', 'Message Sent')
 	    			setTimeout(removeMsg, 3000, $this)
 	    			//removeMsg($this);
+				}
+				else{
+					$this.attr('data-content', 'ERROR: Message not sent. Status: ' + this.status + ' ' + this.statusText)
+	    			setTimeout(removeMsg, 3000, $this)
 				}
 			}
 					   
