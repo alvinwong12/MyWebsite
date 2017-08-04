@@ -1,13 +1,5 @@
 //javascript
 
-/*
-function removeMsg(element){
-	setTimeout(function(){
-		element.attr('data-content', '')
-	}, 3000)
-	
-}
-*/
 var projectPeriodicTimer
 
 function cycleProject(){
@@ -37,7 +29,7 @@ function cycleProject(){
 }
 
 function removeMsg(element){
-		element.attr('data-content', '')
+	element.attr('data-content', '')
 }
 
 // Jquery
@@ -127,18 +119,6 @@ $(document).ready(function(){
 		http.send(formData);
 	   
 	});
-
-
-	//
-	$(window).resize(function(){
-		if (screen.width < 768){
-			$('#user-description').html('Automation Developer<br>X<br>Programmer')
-		}
-		else{
-			$('#user-description').html('Automation Developer &bull; Programmer')
-		}
-	})
-	
 
 
 	///

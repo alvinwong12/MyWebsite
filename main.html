@@ -60,27 +60,21 @@
 			</div>
 			<div class="container">
 				<div id="jumbotron-content">
-					<p id="user-name" class="h1 text-center"><span>ALVIN</span> WONG</p>
-					<div class="bar" id="bar-1"> </div>
-					<p id="user-description" class="text-center">Automation Developer &bull; Programmer</p>
+					<p id="user-name" class="h1 text-center">ALVIN WONG</p>
+					
+					<p class="user-description" id="job1">Automation Developer</p>
+					<p class="user-description" id="bullet"> &bull;</p>
+					<p class="user-description" id="job2">Programmer</p>
 				</div>
 				<div id="jumbotron-btns">
-					<a href="#quote" class="btn btn-primary btn1 btn-default text-link_button" >Learn More</a>
+					<a href="#projects" class="btn btn-primary btn1 btn-default text-link_button" >Learn More</a>
 				 	<a href="#contact" class="btn btn-primary btn2 btn-default text-link_button" >CONTACT</a>
 				</div>
 			</div>
 			
 		</div>
 	</div>
-	<div class="quote section" id="quote">
-		<div class="container">
-			<p class="h2 text-center" id="title-quote">Inspiring quote I live by</p>
-			<div class="bar" id="bar-2"> </div>
 	
-			<p class="lead text-center" id="content-quote">Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.</p>
-			<p class="text-right footer">- <i>Mark Zuckerburg</i></p>
-		</div>
-	</div>
 	<div class="projects section" id="projects">
 		<div class="container">
 			<p class="text-center h1" id="title-projects">Projects</p>
@@ -128,7 +122,7 @@
 			<p class="h1 text-center section-title">About Me</p>
 			<div class="bar" id="bar-4"> </div>
 			<div class="row">
-				<div class="col-lg-4 col-xs-12 col-sm-4 col-md-4">
+				<div class="col-lg-4 col-xs-12 col-sm-4 col-md-"4>
 					<p class="h3 text-center  title top-bottom-margin-none" data-content='Introduction'>Introduction</p>
 				</div>
 				<div class="col-lg-8 col-xs-12 col-sm-8 col-md-8">
@@ -141,7 +135,7 @@
 					<p class="h3 text-center title top-bottom-margin-none" data-content='Work'>Work</p>
 				</div>
 				<div class="col-lg-8 col-xs-12 col-sm-8 col-md-8">
-					<p class="text-content"><span class="job-company">Genesys Laboratories Canada Inc.</span><br><span style="font-size:24px; color:black; font-weight: bolder;" class="job-title">Automation Developer</span><br>May 2017 - Present<br><br>Genesys is a company which provides customer experience software to other business. As a automation developer on a software deployment team, I developed scripts that autoamates analysis, validation, and deployment processes.</p>
+					<p class="text-content"><span class="job-company">Genesys Laboratories Canada Inc.</span><br><span style="font-size:24px; color:black; font-weight: bolder;" class="job-title">Automation Developer</span><br><br>Genesys is a company which provides customer experience software to other business. As a automation developer on a software deployment team, I developed scripts that autoamates analysis, validation, and deployment processes.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -149,7 +143,7 @@
 					<p class="h3 text-center title top-bottom-margin-none" data-content='Skills'>Skills</p>
 				</div>
 				<div class="col-lg-8 col-xs-12 col-sm-8 col-md-8">
-					<p class="text-content">HTML5, CSS3, Bootstrap, Javascript, Jquery, Node.Js, Python, Java, Android studio, C++, Chef, Git, Mercurial.<br> Knowledge of Ruby, SQL, VHDL, Typescript</p>
+					<p class="text-content">HTML5, CSS3, Bootstrap, Javascript, Jquery, Node.Js, Python, Java, Android studio, C++, Git, Mercurial.<br> Knowledge of Ruby, SQL, VHDL, Typescript, Vagrant, Chef</p>
 				</div>
 			</div>
 		</div>
@@ -162,7 +156,7 @@
 			<p class="text-content content" id="intro">If you are interested in knowing me more, send me a quick message below or contact me at,<br><i class="material-icons" id="email">email</i>&nbsp;&nbsp;<span id="email">alvinwong312@gmail.com</span></p>
 			<div class="row">
 				<div class="col-lg-6 col-xs-12 col-sm-6 col-md-6">
-					<form action="https://alvinwong.herokuapp.com/message" method="post">
+					<form action="http://localhost:8080/message" method="post">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Name" name="name">
 						</div>
