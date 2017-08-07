@@ -67,6 +67,8 @@ function sendMail(auth, formData, callback) {
 
 
 app.use(express.static(__dirname));
+
+
 /*
 app.use('/css', express.static('css'));
 app.use('/js', express.static('js'));
@@ -77,7 +79,8 @@ app.use('/link', express.static('link'));
 */
 
 app.get('/', function (req, res){
-	res.redirect('/main.html');
+	//res.redirect('/main.html');
+	res.sendFile(__dirname + '/main.html');
 })
 app.get('/info', function(req, res){
 	res.send('Server for Alvin\'s person website to handle all requests. Version: 1.0.0')
