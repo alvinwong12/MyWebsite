@@ -80,6 +80,11 @@ app.use('/link', express.static('link'));
 
 app.get('/', function (req, res){
 	//res.redirect('/main.html');
+	// Default send english site
+	res.sendFile(__dirname + '/main.html');
+})
+app.get('/en', function (req,res){
+	// User request english site
 	res.sendFile(__dirname + '/main.html');
 })
 app.get('/info', function(req, res){
