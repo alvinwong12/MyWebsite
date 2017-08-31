@@ -936,3 +936,43 @@ span{
 		padding-bottom: 10%;
 	}
 }
+
+/*	Copyright  */
+.copyright{
+	background: #f1f1f1;
+	margin:0;
+	font-size: 1em;
+}
+@media only screen and (min-width: 1200px){
+	.copyright{
+		text-align: center;
+	}
+	.copyright p{
+		font-size: 1em;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.copyright{
+		text-align: center;
+	}
+	.copyright p{
+		font-size: 0.9em;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.copyright{
+		text-align: center;
+	}
+	.copyright p{
+		font-size: 0.8em;
+	}
+}
+@media only screen and (max-width: 767px){
+	.copyright{
+		text-align: center;
+	}
+	.copyright p{
+		font-size: 0.7em;
+	}
+}
