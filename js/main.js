@@ -107,7 +107,7 @@ $(document).ready(function(){
 	    			//removeMsg($this);
 				}
 				else{
-					$this.attr('data-content', 'ERROR: Message not sent. Status: ' + this.status + ' ' + this.statusText)
+					$this.attr('data-content', 'ERROR: Message not sent.')
 	    			setTimeout(removeMsg, 3000, $this)
 				}
 			}
