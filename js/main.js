@@ -99,12 +99,16 @@ $(document).ready(function(){
 		var http = new XMLHttpRequest();
 		http.onreadystatechange = function(){
 			if (this.readyState == 4){
+				console.log(this.status);
 				if (this.status == 200){
 					// Get submit button
 
 	    			$this.attr('data-content', 'Message Sent')
 	    			setTimeout(removeMsg, 3000, $this)
 	    			//removeMsg($this);
+				}
+				else if(this.status == 0){
+					
 				}
 				else{
 					$this.attr('data-content', 'ERROR: Message not sent.')
@@ -115,7 +119,9 @@ $(document).ready(function(){
 		};
 
 		http.open('POST', url, true);
-		http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+		//http.setRequestHeader('Access-Control-Allow-Origin', '*');
+		http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
 		http.send(formData);
 	   
 	});

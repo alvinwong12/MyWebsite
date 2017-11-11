@@ -6,9 +6,10 @@ var port = process.env.PORT || 8080;
 var fs = require('fs');
 var googleAuth = require('google-auth-library');
 var google = require('googleapis');
+var cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
+//app.use(cors());
 
 function getOAuth2Client(callback) {
 	// Load client secrets
@@ -40,7 +41,7 @@ function sendMail(auth, formData, callback) {
 
 	var email_lines = [];
 
-	email_lines.push('From: alvinwong312@gmail.com');
+	email_lines.push('From: alvinwong312@gmail.com' );
 	email_lines.push('To: alvinwong312@gmail.com');
 	email_lines.push('Content-type: text/html;charset=iso-8859-1');
 	email_lines.push('MIME-Version: 1.0');
@@ -55,15 +56,57 @@ function sendMail(auth, formData, callback) {
 	var base64EncodedEmail = new Buffer(email).toString('base64');
 	base64EncodedEmail = base64EncodedEmail.replace(/\+/g, '-').replace(/\//g, '_');
 
-	gmail.users.messages.send({
+	// make function callback
+	// execute callback later
+	var req = gmail.users.messages.send({
 		auth: auth,
 		userId: 'me',
 		resource: {
 			raw: base64EncodedEmail
 		}
-	}, callback);
+	}, function(err,res){
+		if (err){
+			callback(err, null);
+		}
+		else{
+			// Modify to SPAM
+			moveSpam(auth, res);
+			callback(null, res);
+		}
+		
+	});
+
+}
+function moveSpam(auth, email){
+	var gmail = google.gmail('v1');
+	//list(auth);
+	
+	gmail.users.messages.modify({
+		auth: auth,
+		userId: 'me',
+	    'id': email.id,
+	    resource:
+            {
+                "addLabelIds": [
+                    "Label_1"	// =WebIM label in GUI
+                ],
+                "removeLabelIds": [
+                    "INBOX"
+                ]
+            }
+	});
+	
 }
 
+function list(auth){
+	var gmail = google.gmail('v1');
+	gmail.users.labels.list({
+		auth: auth,
+		userId: 'me'
+	}, function(err, res){
+		console.log(res);
+	});
+}
 
 
 app.use(express.static(__dirname));
@@ -77,6 +120,12 @@ app.use('/pic', express.static('pic'));
 app.use('/files', express.static('files'));
 app.use('/link', express.static('link'));
 */
+app.all('/', function(req, res, next){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  	res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  	next();
+})
 
 app.get('/', function (req, res){
 	//res.redirect('/main.html');
@@ -110,7 +159,6 @@ app.post('/message', function(req,res){
 		"email": req.body.email,
 		"message": req.body.message
 	}
-
 	getOAuth2Client(function(err, oauth2Client) {
 		if (err) {
 			console.log('err:', err);
